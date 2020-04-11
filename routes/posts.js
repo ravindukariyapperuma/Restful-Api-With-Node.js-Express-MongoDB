@@ -28,8 +28,13 @@ router.post('/', async (req, res) => {
 });
 
 //SPECIFIC POST
-router.get('/:postId', (req, res) => {
-    console.log(req.params.postId);
+router.get('/:postId', async (req, res) => {
+    try{
+    const post = await Post.findById(req.params.postId);
+    res.json(post);
+    }catch(err){
+        res.json({message: err});
+    }
 });
 
 module.exports = router;
