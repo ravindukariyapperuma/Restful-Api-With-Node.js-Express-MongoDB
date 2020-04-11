@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 //Import Routes
-const postRoute = require('./routes/posts');
+const postsRoute = require('./routes/posts');
 
 app.use('/posts', postsRoute);
 
